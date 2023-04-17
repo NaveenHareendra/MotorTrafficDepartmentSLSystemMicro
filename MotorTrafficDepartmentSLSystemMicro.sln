@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MotorTrafficDepartmentSL", "MotorTrafficDepartmentSL", "{BF5CE455-D045-4E63-92F5-BDF2CFF95AB4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "com.licenseService", "LicenseService\com.licenseService.csproj", "{3DD91C0F-60E1-473E-B809-35D486D6C6DE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ocelot.apiGateway", "rmv.ocelot\ocelot.apiGateway.csproj", "{4E53A3A2-0E17-4EC7-9B0B-780911C8A69C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DD91C0F-60E1-473E-B809-35D486D6C6DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DD91C0F-60E1-473E-B809-35D486D6C6DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DD91C0F-60E1-473E-B809-35D486D6C6DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DD91C0F-60E1-473E-B809-35D486D6C6DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E53A3A2-0E17-4EC7-9B0B-780911C8A69C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E53A3A2-0E17-4EC7-9B0B-780911C8A69C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E53A3A2-0E17-4EC7-9B0B-780911C8A69C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E53A3A2-0E17-4EC7-9B0B-780911C8A69C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EA2E8EF9-791D-48C7-B298-F9532D1524BC}
+	EndGlobalSection
+EndGlobal
