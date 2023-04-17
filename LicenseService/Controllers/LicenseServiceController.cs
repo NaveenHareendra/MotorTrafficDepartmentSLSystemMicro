@@ -33,11 +33,10 @@ namespace LicenseService.Controllers
             return licenseViewService.checkLicense(id) != null? Ok(licenseMaintain.GetLicenses()):NoContent();
         }
         // POST api/<LicenseServiceController>
-          [HttpPost]
+          
+        [HttpPost]
         public IActionResult Post([FromBody] Models.license license)
         {
-            //return Ok(_licenseService.AddLicense(license));
-
             return Ok(licenseMaintain.registerLicense(license));
         }
 
