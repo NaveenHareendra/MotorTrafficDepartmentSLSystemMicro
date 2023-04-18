@@ -26,7 +26,7 @@ namespace LicenseService.Services
         {
             Models.license selectedLicense = licenseMockDataService.Licenses.FirstOrDefault(x => x.id == license.id);
             
-            if((license.id != 0) && (license.name != null) && (license.address != null) && (license.Age > 16) && (selectedLicense.licenseIssued!=null))
+            if((license.id != 0) && (license.name != null) && (license.address != null) && (license.Age > 16) )
             {
                 if (selectedLicense != null)
                 {
@@ -47,19 +47,20 @@ namespace LicenseService.Services
         protected internal bool? deleteLicense(int id)
         {
             // if issued=1 only
-            Models.license selectedLicense = licenseMockDataService.Licenses.FirstOrDefault(x => x.id == id);
 
-            if (!selectedLicense.licenseIssued)
+            Models.license selectedLicense = licenseMockDataService.Licenses.FirstOrDefault(x => x.id == id);
+            if (selectedLicense != null)
             {
-                if (selectedLicense != null)
+                if ((selectedLicense.licenseIssued != true))
                 {
-                    licenseMockDataService.Licenses.Remove(selectedLicense);
-                    return true;
+
+                   licenseMockDataService.Licenses.Remove(selectedLicense);
+                   return true;
                 }
 
             }
 
-            Console.WriteLine("Unable to delete, wrong ID Entered");
+            Console.WriteLine("Unable to delete the license with the ID, please check status, or the ID");
             return false;
         }
     }
