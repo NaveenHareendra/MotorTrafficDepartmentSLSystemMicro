@@ -182,6 +182,66 @@
           "Port": 5135
         }
       ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/DriverOtherServices",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/DriverOtherServices",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5119
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/DriverOtherServices",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/DriverOtherServices",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5119
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/DriverOtherServices",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamPathTemplate": "/api/DriverOtherServices",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5119
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/DriverOtherServices/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/DriverOtherServices/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5119
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/DriverOtherServices/{id}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamPathTemplate": "/api/DriverOtherServices/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5119
+        }
+      ]
     }
   ]
 }
