@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ocelot.apiGateway", "rmv.oc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ocelot.mobile", "ocelot.mobile\ocelot.mobile.csproj", "{69692CCA-F08D-404D-90EF-C844D91EEBDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vehicle.Registration", "Vehicle.Registration\Vehicle.Registration.csproj", "{C7B57FE9-1BDE-4952-B22D-19BB6E8BD3D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vehicle.Registration", "Vehicle.Registration\Vehicle.Registration.csproj", "{C7B57FE9-1BDE-4952-B22D-19BB6E8BD3D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sliit.MTIT.DriverPayment", "Sliit.MTIT.DriverPayment\Sliit.MTIT.DriverPayment.csproj", "{5DDA3A0C-8053-4ECA-98E6-718D0D61A170}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{C7B57FE9-1BDE-4952-B22D-19BB6E8BD3D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7B57FE9-1BDE-4952-B22D-19BB6E8BD3D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7B57FE9-1BDE-4952-B22D-19BB6E8BD3D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DDA3A0C-8053-4ECA-98E6-718D0D61A170}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DDA3A0C-8053-4ECA-98E6-718D0D61A170}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DDA3A0C-8053-4ECA-98E6-718D0D61A170}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DDA3A0C-8053-4ECA-98E6-718D0D61A170}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +50,7 @@ Global
 		{4E53A3A2-0E17-4EC7-9B0B-780911C8A69C} = {BF5CE455-D045-4E63-92F5-BDF2CFF95AB4}
 		{69692CCA-F08D-404D-90EF-C844D91EEBDC} = {BF5CE455-D045-4E63-92F5-BDF2CFF95AB4}
 		{C7B57FE9-1BDE-4952-B22D-19BB6E8BD3D7} = {BF5CE455-D045-4E63-92F5-BDF2CFF95AB4}
+		{5DDA3A0C-8053-4ECA-98E6-718D0D61A170} = {BF5CE455-D045-4E63-92F5-BDF2CFF95AB4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EA2E8EF9-791D-48C7-B298-F9532D1524BC}
