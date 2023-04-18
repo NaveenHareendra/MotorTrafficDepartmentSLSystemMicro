@@ -89,7 +89,7 @@
     },
     {
       "UpstreamPathTemplate": "/gateway/Vehicle/addVehicle",
-      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamHttpMethod": [ "Post" ],
       "DownstreamPathTemplate": "/api/Vehicle/addVehicle",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -101,7 +101,7 @@
     },
     {
       "UpstreamPathTemplate": "/gateway/Vehicle/updateVehicle/{id}",
-      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamHttpMethod": [ "Put" ],
       "DownstreamPathTemplate": "/api/Vehicle/updateVehicle/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -113,7 +113,7 @@
     },
     {
       "UpstreamPathTemplate": "/gateway/Vehicle/deleteVehicle/{id}",
-      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamHttpMethod": [ "Delete" ],
       "DownstreamPathTemplate": "/api/Vehicle/deleteVehicle/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
