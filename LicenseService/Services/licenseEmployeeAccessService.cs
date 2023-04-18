@@ -4,7 +4,7 @@ namespace LicenseService.Services
 {
     public class licenseEmployeeAccessService
     {
-        protected internal List<Models.license> GetLicenses()
+        public List<Models.license> GetLicenses()
         {
             return licenseMockDataService.Licenses;
         }
@@ -12,23 +12,36 @@ namespace LicenseService.Services
         protected internal Models.license? registerLicense(Models.license license)
         {
             licenseMockDataService.Licenses.Add(license);
-            return license;
+
+            if((license.id != 0) &&(license.Age>16) &&(license.address != null) &&(license.name != null) &&(license.licenseIssued != null))
+            {
+
+                return license;
+            }
+            return null;
         }
 
 
         protected internal Models.license? updateLicense(Models.license license)
         {
             Models.license selectedLicense = licenseMockDataService.Licenses.FirstOrDefault(x => x.id == license.id);
-
-            if (selectedLicense != null)
+            
+            if((license.id != 0) && (license.name != null) && (license.address != null) && (license.Age > 16) && (selectedLicense.licenseIssued!=null))
             {
-                selectedLicense.id = license.id;
-                selectedLicense.name = license.name;
-                selectedLicense.address = license.address;
-                selectedLicense.Age = license.Age;
+                if (selectedLicense != null)
+                {
+                    selectedLicense.id = license.id;
+                    selectedLicense.name = license.name;
+                    selectedLicense.address = license.address;
+                    selectedLicense.Age = license.Age;
+                    selectedLicense.licenseIssued = license.licenseIssued;
+                }
+                return selectedLicense;
             }
 
-            return selectedLicense;
+            return null;
+
+
         }
 
         protected internal bool? deleteLicense(int id)
