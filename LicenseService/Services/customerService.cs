@@ -2,7 +2,7 @@
 
 namespace LicenseService.Services
 {
-    public class licenseService: ILicenseService
+    public class customerService: ILicenseService
     {
 
         public Models.license? checkLicense(int id)

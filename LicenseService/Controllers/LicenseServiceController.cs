@@ -12,9 +12,9 @@ namespace LicenseService.Controllers
     {
         private readonly ILicenseService licenseViewService;
         private licenseEmployeeAccessService licenseMaintain;
-        public LicenseServiceController(ILicenseService licenseViewService, licenseEmployeeAccessService maintainLicenseConstruct)
+        public LicenseServiceController(ILicenseService viewLicenseServiceConstruct, licenseEmployeeAccessService maintainLicenseConstruct)
         {
-            licenseViewService = licenseViewService ?? throw new ArgumentNullException(nameof(licenseViewService));
+            licenseViewService = viewLicenseServiceConstruct ?? throw new ArgumentNullException(nameof(licenseViewService));
             licenseMaintain = maintainLicenseConstruct ?? throw new ArgumentNullException(nameof(maintainLicenseConstruct));
 
         }
@@ -30,15 +30,25 @@ namespace LicenseService.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            return licenseViewService.checkLicense(id) != null? Ok(licenseMaintain.GetLicenses()):NoContent();
+
+            return licenseViewService.checkLicense(id) != null? Ok(licenseViewService.checkLicense(id)) :NoContent();
         }
         // POST api/<LicenseServiceController>
-          [HttpPost]
+          
+        [HttpPost]
         public IActionResult Post([FromBody] Models.license license)
         {
-            //return Ok(_licenseService.AddLicense(license));
+            var checkExecution = licenseMaintain.registerLicense(license);
 
-            return Ok(licenseMaintain.registerLicense(license));
+            if (checkExecution == null)
+            {
+                return BadRequest("Opeartion failed, please check the inputs");
+            }
+            else
+            {
+                return Ok(licenseMaintain.registerLicense(license));
+            }
+
         }
 
         
@@ -46,7 +56,13 @@ namespace LicenseService.Controllers
         [HttpPut("{id}")]
         public IActionResult Put([FromBody] Models.license license)
         {
-            return Ok(licenseMaintain.updateLicense(license));
+            var checkExecution = licenseMaintain.updateLicense(license);
+
+            if (checkExecution!=null)
+            {
+                return Ok(licenseMaintain.updateLicense(license));
+            }
+            return BadRequest("Cannot update into empty fields.");    
         }
 
         // DELETE api/<LicenseServiceController>/5

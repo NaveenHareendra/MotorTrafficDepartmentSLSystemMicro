@@ -3,7 +3,7 @@ using LicenseService.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddScoped<ILicenseService, licenseService>();
+builder.Services.AddScoped<ILicenseService, customerService>();
 builder.Services.AddScoped<licenseEmployeeAccessService>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
