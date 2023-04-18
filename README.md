@@ -6,7 +6,7 @@
 <b>How to contribute:</b>
 <li>Make a branch in your name</li>
 <li>Push it</li>
-<li>After considerations and comments it will be merged</li>
+<li>After reviewing it will be merged</li>
 <hr/>
 
 <b>Technologies used:</b>
