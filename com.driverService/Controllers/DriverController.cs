@@ -22,7 +22,7 @@ namespace com.driverService.Controllers
         /// </summary>
         /// <returns>return the list of drivers</returns>
         // GET: api/<DriverController>
-        [HttpGet]
+        [HttpGet("getAllDrivers")]
         public IActionResult Get()
         {
             return Ok(_driverService.GetDrivers());
@@ -34,7 +34,7 @@ namespace com.driverService.Controllers
         /// <param name="id"></param>
         /// <returns>Return the driver with the passed ID</returns>
         // GET api/<DriverController>/5
-        [HttpGet("{id}")]
+        [HttpGet("getDriver/{id}")]
         public IActionResult Get(int id)
         {
             return _driverService.GetDriver(id) != null ? Ok(_driverService.GetDriver(id)) : NoContent();
@@ -46,7 +46,7 @@ namespace com.driverService.Controllers
         /// <param name="driver"></param>
         /// <returns>Return the added driver</returns>
         // POST api/<DriverController>
-        [HttpPost]
+        [HttpPost("addDriver")]
         public IActionResult Post([FromBody] Models.Driver driver)
         {
             return Ok(_driverService.AddDriver(driver));
@@ -60,7 +60,7 @@ namespace com.driverService.Controllers
         /// <returns>Return the updated driver</returns>
         // PUT api/<DriverController>/5
         //[HttpPut("{id}")]
-        [HttpPut]
+        [HttpPut("updateDriver/{id}")]
         public IActionResult Put([FromBody] Models.Driver driver)
         {
             return Ok(_driverService.UpdateDriver(driver));
@@ -72,7 +72,7 @@ namespace com.driverService.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         // DELETE api/<DriverController>/5
-        [HttpDelete("{id}")]
+        [HttpDelete("deleteDriver/{id}")]
         public IActionResult Delete(int id)
         {
             var result = _driverService.DeleteDriver(id);

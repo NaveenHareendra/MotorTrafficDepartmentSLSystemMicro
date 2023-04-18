@@ -71,7 +71,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5176
+          "Port": 5076
         }
       ]
     },
@@ -83,7 +83,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5176
+          "Port": 5076
         }
       ]
     },
@@ -95,7 +95,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5176
+          "Port": 5076
         }
       ]
     },
@@ -107,7 +107,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5176
+          "Port": 5076
         }
       ]
     },
@@ -119,67 +119,67 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5176
+          "Port": 5076
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/com.driverService/GetDrivers",
+      "UpstreamPathTemplate": "/gateway/driverService/GetDrivers",
       "UpstreamHttpMethod": [ "Get" ],
-      "DownstreamPathTemplate": "/api/com.driverService/GetDrivers",
+      "DownstreamPathTemplate": "/api/driver/getAllDrivers",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5176
+          "Port": 5135
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/com.driverService/AddDriver",
+      "UpstreamPathTemplate": "/gateway/driverService/AddDriver",
       "UpstreamHttpMethod": [ "Post" ],
-      "DownstreamPathTemplate": "/api/com.driverService/AddDriver",
+      "DownstreamPathTemplate": "/api/driver/addDriver",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5176
+          "Port": 5135
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/com.driverService/UpdateDriver/{id}",
+      "UpstreamPathTemplate": "/gateway/driverService/UpdateDriver/{id}",
       "UpstreamHttpMethod": [ "Put" ],
-      "DownstreamPathTemplate": "/api/com.driverService/UpdateDriver/{id}",
+      "DownstreamPathTemplate": "/api/driverService/updateDriver/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5176
+          "Port": 5135
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/com.driverService/DeleteDriver/{id}",
+      "UpstreamPathTemplate": "/gateway/driverService/DeleteDriver/{id}",
       "UpstreamHttpMethod": [ "Delete" ],
-      "DownstreamPathTemplate": "/api/com.driverService/DeleteDriver/{id}",
+      "DownstreamPathTemplate": "/api/driverService/deleteDriver/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5176
+          "Port": 5135
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/com.driverService/GetDriver/{id}",
+      "UpstreamPathTemplate": "/gateway/driverService/GetDriver/{id}",
       "UpstreamHttpMethod": [ "Get" ],
-      "DownstreamPathTemplate": "/api/com.driverService/GetDriver/{id}",
+      "DownstreamPathTemplate": "/api/driverService/getDriver/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5176
+          "Port": 5135
         }
       ]
     }
