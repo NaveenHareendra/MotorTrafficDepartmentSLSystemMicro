@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Reflection.Metadata.Ecma335;
+using Microsoft.AspNetCore.Mvc;
+using com.driverService.Data;
+using com.driverService.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,36 +11,74 @@ namespace com.driverService.Controllers
     [ApiController]
     public class DriverController : ControllerBase
     {
+        private readonly IDriverService _driverService;
+
+        public DriverController(IDriverService driverService)
+        {
+            _driverService = driverService??throw new ArgumentNullException(nameof(driverService));
+        }
+        /// <summary>
+        /// Get all drivers
+        /// </summary>
+        /// <returns>return the list of drivers</returns>
         // GET: api/<DriverController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok(_driverService.GetDrivers());
         }
 
+        /// <summary>
+        /// Get driver by ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Return the driver with the passed ID</returns>
         // GET api/<DriverController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
+            return _driverService.GetDriver(id) != null ? Ok(_driverService.GetDriver(id)) : NoContent();
         }
 
+        /// <summary>
+        /// Add Driver
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <returns>Return the added driver</returns>
         // POST api/<DriverController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] Models.Driver driver)
         {
+            return Ok(_driverService.AddDriver(driver));
         }
 
+        /// <summary>
+        /// Update the driver
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="driver"></param>
+        /// <returns>Return the updated driver</returns>
         // PUT api/<DriverController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        //[HttpPut("{id}")]
+        [HttpPut]
+        public IActionResult Put([FromBody] Models.Driver driver)
         {
+            return Ok(_driverService.UpdateDriver(driver));
         }
 
+        /// <summary>
+        /// Delete the driver with the passed ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // DELETE api/<DriverController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            var result = _driverService.DeleteDriver(id);
+
+            return result.HasValue & result == true ? Ok($"driver with ID:{id} got deleted successfully.")
+                : BadRequest($"Unable to delete the driver with ID:{id}.");
         }
     }
 }

@@ -3,15 +3,15 @@ using com.driverService.Models;
 
 namespace com.driverService.Services
 {
-    public class DriverService : IDriverService
+    public class DriverService:IDriverService
     {
-            public List<Models.Driver> GetDrivers()
+            public List<Models.Driver> GetDrivers() 
             {
                 return DriverMockDataService.Drivers;
             }
             public Models.Driver? GetDriver(int Id)
             {
-                return DriverMockDataService.Drivers.FirstOrDefault(x => x.Id == id);
+                return DriverMockDataService.Drivers.FirstOrDefault(x => x.Id == Id);
             }
             public Models.Driver? AddDriver(Models.Driver driver)
             {
@@ -38,7 +38,7 @@ namespace com.driverService.Services
 
             public bool? DeleteDriver(int Id)
             {
-                Models.Driver selectedDriver = DriverMockDataService.Drivers.FirstOrDefault(x => x.Id == id);
+                Models.Driver selectedDriver = DriverMockDataService.Drivers.FirstOrDefault(x => x.Id == Id);
                 if (selectedDriver != null)
                 {
                     DriverMockDataService.Drivers.Remove(selectedDriver);
