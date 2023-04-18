@@ -150,7 +150,7 @@
     {
       "UpstreamPathTemplate": "/gateway/driverService/UpdateDriver/{id}",
       "UpstreamHttpMethod": [ "Put" ],
-      "DownstreamPathTemplate": "/api/driverService/updateDriver/{id}",
+      "DownstreamPathTemplate": "/api/driver/updateDriver/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -162,7 +162,7 @@
     {
       "UpstreamPathTemplate": "/gateway/driverService/DeleteDriver/{id}",
       "UpstreamHttpMethod": [ "Delete" ],
-      "DownstreamPathTemplate": "/api/driverService/deleteDriver/{id}",
+      "DownstreamPathTemplate": "/api/driver/deleteDriver/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -174,7 +174,7 @@
     {
       "UpstreamPathTemplate": "/gateway/driverService/GetDriver/{id}",
       "UpstreamHttpMethod": [ "Get" ],
-      "DownstreamPathTemplate": "/api/driverService/getDriver/{id}",
+      "DownstreamPathTemplate": "/api/driver/getDriver/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
