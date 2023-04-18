@@ -20,35 +20,35 @@ namespace Vehicle.Registration.Controllers
         }
 
         /// Get all Vehicle
-        [HttpGet]
+        [HttpGet("getallVehicle")]
         public IActionResult Get()
         {
             return Ok(_vehicleService.GetVehicles());
         }
 
         /// Get Vehicle by ID
-        [HttpGet("{id}")]
+        [HttpGet("getVehicle/{id}")]
         public IActionResult Get(int id)
         {
             return _vehicleService.GetVehicle(id) != null ? Ok(_vehicleService.GetVehicle(id)) : NoContent();
         }
 
         /// Add Vehicle
-        [HttpPost]
+        [HttpPost("addVehicle")]
         public IActionResult Post([FromBody] Models.Vehicle vehicle)
         {
             return Ok(_vehicleService.AddVehicle(vehicle));
         }
 
         /// Update the Vehicle
-        [HttpPut]
+        [HttpPut("updateVehicle/{id}")]
         public IActionResult Put([FromBody] Models.Vehicle vehicle)
         {
             return Ok(_vehicleService.UpdateVehicle(vehicle));
         }
 
         /// Delete the Vehicle with the passed ID
-        [HttpDelete("{id}")]
+        [HttpDelete("deleteVehicle/{id}")]
         public IActionResult Delete(int id)
         {
             var result = _vehicleService.DeleteVehicle(id);
