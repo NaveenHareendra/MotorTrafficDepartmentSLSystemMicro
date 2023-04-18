@@ -20,14 +20,14 @@ namespace LicenseService.Controllers
         }
         // GET: api/<LicenseServiceController>
         // GET api/<LicenseServiceController>/5
-        [HttpGet]
+        [HttpGet("getAllLicenses")]
         public IActionResult Get()
         {
             Console.WriteLine("Licensing checks "+ licenseMaintain.GetLicenses());
             return Ok(licenseMaintain.GetLicenses());
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("getLicenseid/{id}")]
         public IActionResult Get(int id)
         {
 
@@ -35,7 +35,7 @@ namespace LicenseService.Controllers
         }
         // POST api/<LicenseServiceController>
           
-        [HttpPost]
+        [HttpPost("registerLicense")]
         public IActionResult Post([FromBody] Models.license license)
         {
             var checkExecution = licenseMaintain.registerLicense(license);
@@ -53,7 +53,7 @@ namespace LicenseService.Controllers
 
         
         // PUT api/<LicenseServiceController>/5
-        [HttpPut("{id}")]
+        [HttpPut("updateLicense/{id}")]
         public IActionResult Put([FromBody] Models.license license)
         {
             var checkExecution = licenseMaintain.updateLicense(license);
@@ -66,7 +66,7 @@ namespace LicenseService.Controllers
         }
 
         // DELETE api/<LicenseServiceController>/5
-        [HttpDelete("{id}")]
+        [HttpDelete("deleteLicense/{id}")]
         public IActionResult Delete(int id)
         {
             var result = licenseMaintain.deleteLicense(id);

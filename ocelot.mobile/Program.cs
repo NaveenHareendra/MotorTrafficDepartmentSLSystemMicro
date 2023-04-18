@@ -2,8 +2,7 @@ using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
-
-builder.Configuration.AddJsonFile("./Api_Gw.Web/ocelot.json", optional:false, reloadOnChange: true);
+builder.Configuration.AddJsonFile("./Api_Gw.Mobile/ocelot_mobile.json", optional: false, reloadOnChange: true);
 
 builder.Services.AddOcelot(builder.Configuration);
 
