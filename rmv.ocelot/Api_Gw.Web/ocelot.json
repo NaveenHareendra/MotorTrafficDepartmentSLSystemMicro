@@ -86,7 +86,126 @@
           "Port": 5176
         }
       ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Vehicle/getallVehicle",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/Vehicle/getallVehicle",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5076
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Vehicle/getVehicle/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/Vehicle/getVehicle/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5076
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Vehicle/addVehicle",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/Vehicle/addVehicle",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5076
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Vehicle/updateVehicle/{id}",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamPathTemplate": "/api/Vehicle/updateVehicle/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5076
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Vehicle/deleteVehicle/{id}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamPathTemplate": "/api/Vehicle/deleteVehicle/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5076
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/driverService/GetDrivers",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/driver/getAllDrivers",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5135
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/driverService/AddDriver",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/driver/addDriver",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5135
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/driverService/UpdateDriver/{id}",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamPathTemplate": "/api/driver/updateDriver/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5135
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/driverService/DeleteDriver/{id}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamPathTemplate": "/api/driver/deleteDriver/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5135
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/driverService/GetDriver/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/driver/getDriver/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5135
+        }
+      ]
     }
-
   ]
 }
