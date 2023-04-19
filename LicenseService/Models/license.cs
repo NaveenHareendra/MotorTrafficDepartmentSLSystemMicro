@@ -10,5 +10,11 @@
         public int Age { get; set; }
 
         public bool licenseIssued { get; set; }
+
+       // public DateOnly issuedDate { get; set; }
+
+        public List<String>? vehicleClasses { get; set; }
+
+        public DateTime licenseIssuedDate { get; set; }
     }
 }
