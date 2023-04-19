@@ -206,6 +206,66 @@
           "Port": 5135
         }
       ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/DriverOtherServices/RegisteredDealerList",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/DriverOtherServices/RegisteredDealerList",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5119
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/DriverOtherServices/AddDealer",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/DriverOtherServices/AddDealer",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5119
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/DriverOtherServices/UpdateRegisteredDealer/{id}",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamPathTemplate": "/api/DriverOtherServices/UpdateRegisteredDealer/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5119
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/DriverOtherServices/DeleteRegisteredDealer/{id}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamPathTemplate": "/api/DriverOtherServices/DeleteRegisteredDealer/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5119
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/DriverOtherServices/SelectRegisteredDealer/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/DriverOtherServices/SelectRegisteredDealer/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5119
+        }
+      ]
     }
   ]
 }
