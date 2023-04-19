@@ -28,7 +28,7 @@ namespace LicenseService.Controllers
             return Ok(licenseMaintain.GetLicenses());
         }
 
-        [HttpGet("getLicenseid/{id}")]
+        [HttpGet("getEachLicense/{id}")]
         public IActionResult Get(int id)
         {
 

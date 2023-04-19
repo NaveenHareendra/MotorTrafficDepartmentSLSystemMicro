@@ -52,9 +52,9 @@
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/licenseWebService/getLicenseid/{id}",
+      "UpstreamPathTemplate": "/gateway/licenseWebService/getEachLicense/{id}",
       "UpstreamHttpMethod": [ "Get" ],
-      "DownstreamPathTemplate": "/api/LicenseService/getLicenseid/{id}",
+      "DownstreamPathTemplate": "/api/LicenseService/getEachLicense/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
