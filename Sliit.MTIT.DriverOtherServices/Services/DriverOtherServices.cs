@@ -7,41 +7,44 @@ namespace Sliit.MTIT.DriverOtherServices.Services
     {
         public List<Models.DriverOtherService> GetDriverOtherServices ()
         {
-            return DriverOtherServicesMockDataService.DriverOtherServices;
+            return DriverOtherServicesMockDataService.OtherServicesData;
         }
 
         public Models.DriverOtherService? GetDriverOtherService(int DealerID)
         {
-            return DriverOtherServicesMockDataService.DriverOtherServices.FirstOrDefault(x => x.DealerId == DealerID);
+            return DriverOtherServicesMockDataService.OtherServicesData.FirstOrDefault(x => x.DealerId == DealerID);
         }
 
         public Models.DriverOtherService? AddDriverOtherService(Models.DriverOtherService driverOtherService)
         { 
-            DriverOtherServicesMockDataService.DriverOtherServices.Add(driverOtherService);
+            DriverOtherServicesMockDataService.OtherServicesData.Add(driverOtherService);
             return driverOtherService;
         }
 
-        public Models.DriverOtherService? UpdateDriverOtherService(Models.DriverOtherService driverOtherService)
+        public Models.DriverOtherService? UpdateDriverOtherService(Models.DriverOtherService driverServices)
         {
-            Models.DriverOtherService selectedDriveOtherServices = DriverOtherServicesMockDataService.DriverOtherServices.FirstOrDefault(x => x.DealerId == driverOtherService.DealerId);
-            if (selectedDriveOtherServices == null) 
+            Models.DriverOtherService selectedDriveOtherServices = DriverOtherServicesMockDataService.OtherServicesData.FirstOrDefault(x => x.DealerId == driverServices.DealerId);
+            Console.WriteLine("selectedDriveOtherServices" + selectedDriveOtherServices.DealerName);
+            if (selectedDriveOtherServices != null) 
             {
-                selectedDriveOtherServices.DealerName = driverOtherService.DealerName;
-                selectedDriveOtherServices.DealerContactNo = driverOtherService.DealerContactNo;
-                selectedDriveOtherServices.OwnerName = driverOtherService.OwnerName;
-                selectedDriveOtherServices.OwnerNIC = driverOtherService.OwnerNIC;
-                return selectedDriveOtherServices;
+                selectedDriveOtherServices.DealerName = driverServices.DealerName;
+                selectedDriveOtherServices.DealerContactNo = driverServices.DealerContactNo;
+                selectedDriveOtherServices.OwnerName = driverServices.OwnerName;
+                selectedDriveOtherServices.OwnerNIC = driverServices.OwnerNIC;
+ 
             }
 
+            Console.WriteLine("Dealer new name: " + driverServices.DealerId); 
+            Console.WriteLine("Dealer name: "+selectedDriveOtherServices.DealerId);
             return selectedDriveOtherServices;
         }
 
         public bool? DeleteDriverOtherService(int DealerId)
         { 
-            Models.DriverOtherService selectedDriverOtherService = DriverOtherServicesMockDataService.DriverOtherServices.FirstOrDefault(x => x.DealerId == DealerId);
+            Models.DriverOtherService selectedDriverOtherService = DriverOtherServicesMockDataService.OtherServicesData.FirstOrDefault(x => x.DealerId == DealerId);
             if (selectedDriverOtherService != null)
             { 
-                DriverOtherServicesMockDataService.DriverOtherServices.Remove(selectedDriverOtherService);
+                DriverOtherServicesMockDataService.OtherServicesData.Remove(selectedDriverOtherService);
                 return true;
             }
             return false;

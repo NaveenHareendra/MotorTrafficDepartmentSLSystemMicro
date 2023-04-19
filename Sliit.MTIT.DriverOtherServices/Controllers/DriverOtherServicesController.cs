@@ -22,7 +22,7 @@ namespace Sliit.MTIT.DriverOtherServices.Controllers
         /// Get all DriverOtherServices
         /// </summary>
         /// <returns>return the list of DriverOtherServices</returns>
-        [HttpGet]
+        [HttpGet("RegisteredDealerList")]
         public IActionResult Get()
         {
             return Ok (_driverOtherServices.GetDriverOtherServices());
@@ -31,18 +31,18 @@ namespace Sliit.MTIT.DriverOtherServices.Controllers
         /// <summary>
         /// Get DriverOtherServices by DealerId
         /// </summary>
-        /// <param name="DealerId"></param>
+        /// <param name="id"></param>
         /// <returns>Return the DriverOtherServices with the passed DealerId</returns>
-        [HttpGet("{id}")]
-        public IActionResult Get(int DealerId)
+        [HttpGet("SelectRegisteredDealer/{id}")]
+        public IActionResult Get(int id)
         {
-            return _driverOtherServices.GetDriverOtherService(DealerId) != null ? Ok(_driverOtherServices.GetDriverOtherService(DealerId)) : NoContent();
+            return _driverOtherServices.GetDriverOtherService(id) != null ? Ok(_driverOtherServices.GetDriverOtherService(id)) : NoContent();
         }
         /// <summary>
         /// Add DriverOtherServices
         /// </summary>
         /// <param name="DriverOtherServices"></param>
-        [HttpPost]
+        [HttpPost("AddDealer")]
         public IActionResult Post([FromBody] Models.DriverOtherService driverOtherService)
         {
             return Ok(_driverOtherServices.AddDriverOtherService(driverOtherService));
@@ -52,8 +52,9 @@ namespace Sliit.MTIT.DriverOtherServices.Controllers
         /// Update the DriverOtherServices
         /// </summary>
         /// <param name="DriverOtherServices"></param>
+        /// <param name="id"></param>
         /// <return>Return the update DriverOtherServices</return>
-        [HttpPut]
+        [HttpPut("UpdateRegisteredDealer/{id}")]
         public IActionResult Put([FromBody] Models.DriverOtherService driverOtherService)
         {
             return Ok(_driverOtherServices.UpdateDriverOtherService(driverOtherService));
@@ -62,14 +63,14 @@ namespace Sliit.MTIT.DriverOtherServices.Controllers
         /// <summary>
         /// Delete the DriverOtherServices with the passed DealerId
         /// </summary>
-        /// <param name="DealerId"></param>
+        /// <param name="id"></param>
         /// <return></return>>
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int DealerId)
+        [HttpDelete("DeleteRegisteredDealer/{id}")]
+        public IActionResult Delete(int id)
         {
-            var result = _driverOtherServices.DeleteDriverOtherService(DealerId);
-            return result.HasValue & result == true ? Ok($"DriverOtherServices wih ID:{DealerId} got deleted successfukky.")
-                : BadRequest($"Unable to delete the DriverOtherServices with ID:{DealerId}.");
+            var result = _driverOtherServices.DeleteDriverOtherService(id);
+            return result.HasValue & result == true ? Ok($"DriverOtherServices wih ID:{id} got deleted successfully.")
+                : BadRequest($"Unable to delete the DriverOtherServices with ID:{id}.");
         }
     }
 }

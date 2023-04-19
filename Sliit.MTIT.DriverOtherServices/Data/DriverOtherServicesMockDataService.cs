@@ -2,7 +2,7 @@
 {
     public class DriverOtherServicesMockDataService
     {
-        public static List<Models.DriverOtherService> DriverOtherServices = new List<Models.DriverOtherService>()
+        public static List<Models.DriverOtherService> OtherServicesData = new List<Models.DriverOtherService>()
         { 
             new Models.DriverOtherService { DealerId = 2011, DealerName = "Paragon Sports", DealerContactNo = "0112 487 036", OwnerName = "L.H.Rajakaruna", OwnerNIC = "997592441v"},
             new Models.DriverOtherService { DealerId = 2012, DealerName = "Select iCar", DealerContactNo = "071 836 7356", OwnerName = "R.T.S.Perera", OwnerNIC = "787494541v"},
