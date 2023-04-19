@@ -52,9 +52,33 @@
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/licenseWebService/getLicenseid/{id}",
+      "UpstreamPathTemplate": "/gateway/licenseWebService/getEachLicense/{id}",
       "UpstreamHttpMethod": [ "Get" ],
-      "DownstreamPathTemplate": "/api/LicenseService/getLicenseid/{id}",
+      "DownstreamPathTemplate": "/api/LicenseService/getEachLicense/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5176
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/licenseWebService/licenseServicesList",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/LicenseService/licenseServicesList",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5176
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/licenseWebService/purchaseServices",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/LicenseService/purchaseServices",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
