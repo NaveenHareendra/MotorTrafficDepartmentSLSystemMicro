@@ -32,7 +32,7 @@ namespace LicenseService.Controllers
         public IActionResult Get(int id)
         {
 
-            return licenseViewService.checkLicense(id) != null? Ok(licenseViewService.checkLicense(id)) :NoContent();
+            return licenseViewService.checkLicense(id) != null? Ok(licenseViewService.checkLicense(id)) :BadRequest("No Such License");
         }
         // POST api/<LicenseServiceController>
           
@@ -43,11 +43,11 @@ namespace LicenseService.Controllers
 
             if (checkExecution == null)
             {
-                return BadRequest("Opeartion failed, please check the inputs");
+                return BadRequest("Opertion failed, please check the inputs");
             }
             else
             {
-                return Ok(licenseMaintain.registerLicense(license));
+                return Ok("Request Successful");
             }
 
         }
@@ -61,7 +61,7 @@ namespace LicenseService.Controllers
 
             if (checkExecution!=null)
             {
-                return Ok(licenseMaintain.updateLicense(license));
+                return Ok("Updated Success");
             }
             return BadRequest("Cannot update into empty fields.");    
         }
