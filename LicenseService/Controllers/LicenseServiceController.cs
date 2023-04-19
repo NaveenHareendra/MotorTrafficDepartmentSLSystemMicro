@@ -12,6 +12,7 @@ namespace LicenseService.Controllers
     {
         private readonly ILicenseService licenseViewService;
         private licenseEmployeeAccessService licenseMaintain;
+        
         public LicenseServiceController(ILicenseService viewLicenseServiceConstruct, licenseEmployeeAccessService maintainLicenseConstruct)
         {
             licenseViewService = viewLicenseServiceConstruct ?? throw new ArgumentNullException(nameof(licenseViewService));
@@ -21,7 +22,7 @@ namespace LicenseService.Controllers
         // GET: api/<LicenseServiceController>
         // GET api/<LicenseServiceController>/5
         [HttpGet("getAllLicenses")]
-        public IActionResult Get()
+        public IActionResult getAllLicenses()
         {
             Console.WriteLine("Licensing checks "+ licenseMaintain.GetLicenses());
             return Ok(licenseMaintain.GetLicenses());
@@ -73,6 +74,28 @@ namespace LicenseService.Controllers
 
             return result.HasValue & result == true ? Ok($"license with id:{id} got deleted successfully.")
             : BadRequest($"Unable to delete license with id:{id}");
+
+        }
+
+        [HttpGet("licenseServicesList")]
+        public IActionResult GetLicenseServicesLists()
+        {
+            return Ok(licenseViewService.viewListServices());
+        }
+
+        [HttpPost("purchaseServices")]
+        public IActionResult purchaseServicesLicenses([FromBody] int[] listOfServiceIds)
+        {
+            float resultOfCalculation = licenseViewService.calculatePriceTotal(listOfServiceIds);
+
+            if (resultOfCalculation == 0)
+            {
+                return BadRequest("Something is wrong");
+            }
+            else
+            {
+                return Ok("Total Price Of purchased Services: " + resultOfCalculation);
+            }
 
         }
     }

@@ -18,6 +18,7 @@ namespace LicenseService.Services
 
                 return license;
             }
+
             return null;
         }
 
@@ -35,6 +36,9 @@ namespace LicenseService.Services
                     selectedLicense.address = license.address;
                     selectedLicense.Age = license.Age;
                     selectedLicense.licenseIssued = license.licenseIssued;
+                    selectedLicense.vehicleClasses = license.vehicleClasses;
+                    selectedLicense.licenseIssuedDate = license.licenseIssuedDate;
+
                 }
                 return selectedLicense;
             }

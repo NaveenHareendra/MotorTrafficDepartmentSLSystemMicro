@@ -10,6 +10,9 @@
                 address="172/1, Niwanthidiya Pili", 
                 Age=23,
                 licenseIssued=false
+
+                
+                
             },
 
             new Models.license() {
@@ -17,7 +20,9 @@
                 name="yashmika",
                 address="Makubura",
                 Age=23,
-                licenseIssued=false
+                licenseIssued=true,
+                vehicleClasses=new List<string> {"A1","B1" },
+                licenseIssuedDate=new DateTime(2023, 03, 31)
             },
 
             new Models.license() {
@@ -25,8 +30,10 @@
                 name="kaveen",
                 address="Bokundara",
                 Age=30,
-                licenseIssued=true
-            },
+                licenseIssued=true,
+                vehicleClasses= new List<string>{"A1","B1" },
+                licenseIssuedDate=new DateTime(2023, 03, 31)
+            }
         };
     }
 }
